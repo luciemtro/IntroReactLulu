@@ -1,0 +1,36 @@
+span{
+    position: absolute;
+}
+#top, #bottom{
+    width: 150%;
+    height: 4px;
+    background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+}
+#left, #right{
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to top, blue, cyan, rgb(0, 255, 136));
+}
+#top{
+    top:0;
+    left: -150%;
+    @include animation(translateRight, 5s, infinite, normal, normal);
+}
+#right{
+    right:0;
+    top: -100%;
+    @include animation(translateBottom, 3s, infinite, normal, normal);
+    animation-delay: 2s;
+}
+#bottom{
+    bottom:0;
+    right: -150%;
+    @include animation(translateLeft, 7s, infinite, normal, normal);
+    animation-delay: 5s;
+}
+#left{
+    left:0;
+    bottom: -100%;
+    @include animation(translateTop, 3s, infinite, normal, normal);
+    animation-delay: 7s;
+}

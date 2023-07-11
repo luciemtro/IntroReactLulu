@@ -1,0 +1,211 @@
+@keyframes bgDynamic {
+  0% {
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+  }
+  100% {
+    background-size: 300% 300%;
+    background-position: 100% 50%;
+  }
+}
+@keyframes translateRight {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 300%;
+  }
+}
+@keyframes translateBottom {
+  0% {
+    top: -150%;
+  }
+  100% {
+    top: 300%;
+  }
+}
+@keyframes translateLeft {
+  0% {
+    right: -150%;
+  }
+  100% {
+    right: 300%;
+  }
+}
+@keyframes translateTop {
+  0% {
+    bottom: -150%;
+  }
+  100% {
+    bottom: 300%;
+  }
+}
+span {
+  position: absolute;
+}
+
+#top, #bottom {
+  width: 150%;
+  height: 4px;
+  background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+}
+
+#left, #right {
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to top, blue, cyan, rgb(0, 255, 136));
+}
+
+#top {
+  top: 0;
+  left: -150%;
+  animation-name: translateRight;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: normal;
+}
+
+#right {
+  right: 0;
+  top: -100%;
+  animation-name: translateBottom;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: normal;
+  animation-delay: 2s;
+}
+
+#bottom {
+  bottom: 0;
+  right: -150%;
+  animation-name: translateLeft;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: normal;
+  animation-delay: 5s;
+}
+
+#left {
+  left: 0;
+  bottom: -100%;
+  animation-name: translateTop;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: normal;
+  animation-delay: 7s;
+}
+
+/* font-family: 'Chela One', cursive;
+   font-family: 'Kanit', sans-serif; */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-transform: none;
+  text-decoration: none;
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: bgDynamic;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  background-image: url("src/assets/background2.jpg");
+}
+body #container {
+  width: 60%;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Chela One", cursive;
+}
+
+#inputNewTodo, button {
+  cursor: pointer;
+  border: none;
+}
+
+#containerHeader,
+#containerAddTodo,
+ul {
+  width: 100%;
+  padding: 5%;
+  margin-bottom: 20px;
+  background: rgba(216, 229, 255, 0.719);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+  overflow: hidden;
+  position: relative;
+}
+
+#containerHeader h1 {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: white;
+  text-shadow: 0 0 5px rgb(0, 0, 46);
+}
+
+#containerAddTodo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+#containerAddTodo input, #containerAddTodo button {
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+}
+#containerAddTodo input {
+  color: rgb(100, 90, 97);
+}
+#containerAddTodo button {
+  background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+  margin-top: 10px;
+}
+#containerAddTodo button:hover {
+  background: rgba(0, 0, 0, 0.788);
+  color: white;
+}
+
+#containerTodoList h2 {
+  margin: 20px 0;
+  color: white;
+  text-shadow: 0 0 5px rgb(0, 0, 46);
+}
+#containerTodoList li {
+  margin-bottom: 10px;
+}
+#containerTodoList li::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(to left, rgba(0, 0, 255, 0.349), cyan, rgb(0, 255, 136));
+  animation-name: bgDynamic;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: normal;
+  margin: 10px 0;
+}
+#containerTodoList li input {
+  margin-right: 10px;
+}
+#containerTodoList li label {
+  font-size: 1.2rem;
+  color: rgb(0, 34, 65);
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=index.css.map */

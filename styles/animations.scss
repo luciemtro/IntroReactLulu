@@ -1,0 +1,43 @@
+@keyframes bgDynamic{
+    0%{
+        background-size: 200% 200%;
+        background-position: 0% 0%;
+    }
+    100%{
+        background-size: 300% 300%;
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes translateRight{
+    0%{
+        left: -150%
+    }
+    100%{
+        left: 300%
+    }
+}
+@keyframes translateBottom{
+    0%{
+        top: -150%
+    }
+    100%{
+        top: 300%
+    }
+}
+@keyframes translateLeft{
+    0%{
+        right: -150%
+    }
+    100%{
+        right: 300%
+    }
+}
+@keyframes translateTop{
+    0%{
+        bottom: -150%
+    }
+    100%{
+        bottom: 300%
+    }
+}

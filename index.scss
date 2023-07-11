@@ -1,0 +1,102 @@
+@import "styles/variable.scss";
+@import "styles/mixins.scss";
+@import "styles/animations.scss";
+@import "styles/span.scss";
+/* font-family: 'Chela One', cursive;
+   font-family: 'Kanit', sans-serif; */
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-transform: none;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    padding: 5%;
+    @include displayFull(flex, column, center, center);
+    @include animation(bgDynamic, 25s, infinite, alternate, ease);
+    background-image: url("src/assets/background2.jpg");
+    #container{
+        width: 60%;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, button{
+    font-family: 'Chela One', cursive;
+}
+
+#inputNewTodo, button{
+    cursor: pointer;
+    border: none;
+}
+
+
+
+
+#containerHeader, 
+#containerAddTodo, 
+ul{
+    width: 100%;
+    padding: 5%;
+    margin-bottom: 20px;
+    background: rgba(216, 229, 255, 0.719);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+    overflow: hidden;
+    position: relative;
+}
+#containerHeader{
+    h1{
+        font-size: 2rem;
+        margin: 15px 0;
+        color: white;
+        text-shadow: 0 0 5px rgb(0, 0, 46);
+    }
+}
+#containerAddTodo{
+    @include displayFull(flex, column, center, left);
+    input, button{
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+    }
+    input{
+        color:rgb(100, 90, 97);
+    }
+    button{
+        background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+        margin-top: 10px;
+        &:hover{
+            background: rgba(0, 0, 0, 0.788);
+            color: white;
+        }
+    }
+}
+#containerTodoList{
+    h2{
+        margin: 20px 0;   
+        color: white;
+        text-shadow: 0 0 5px rgb(0, 0, 46);
+    }
+    li{
+        margin-bottom: 10px;
+        &::after{
+            content: "";
+            display: block;
+            height: 2px;
+            background: linear-gradient(to left, rgba(0, 0, 255, 0.349), cyan, rgb(0, 255, 136));
+            @include animation (bgDynamic, 5s, infinite, alternate, normal);
+            margin: 10px 0;
+        }
+        input{
+            margin-right: 10px;
+        }
+        label{
+            font-size: 1.2rem;
+            color: rgb(0, 34, 65);   
+            font-weight: 500;
+        }
+    }
+}

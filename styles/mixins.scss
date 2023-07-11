@@ -1,0 +1,14 @@
+@mixin displayFull($flex, $direction, $justify, $alignItem){
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $alignItem;
+}
+
+@mixin animation($name, $duree, $infini, $alternate, $ease){
+    animation-name: $name;
+    animation-duration: $duree;
+    animation-iteration-count: $infini;
+    animation-direction: $alternate;
+    animation-timing-function: $ease;
+}
