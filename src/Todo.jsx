@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Span from "./Span"
 
 function Todo() {
   const initialTodos = ["My first todo", "My second todo"];
   const [todos, setTodos] = useState(initialTodos);
 
+  // Pour supprimer le label via le button
   const handleDeleteClick = (index) => {
     const updatedTodos = todos.filter((_, i) => i !== index);
     setTodos(updatedTodos);
@@ -13,10 +15,7 @@ function Todo() {
     <>
       <div id="containerTodoList">
         <ul>
-          <span id="top"></span>
-          <span id="right"></span>
-          <span id="bottom"></span>
-          <span id="left"></span>
+          <Span/>
           <h2>Todos :</h2>
           {todos.map((todo, index) => (
             <li key={index}>

@@ -1,11 +1,10 @@
+import Span from "./Span"
+
 function Title() {
     return (
       <>
         <div id="containerHeader">
-          <span id="top"></span>  
-          <span id="right"></span>  
-          <span id="bottom"></span>
-          <span id="left"></span>
+          <Span/>
           <h1>My Todo APP</h1>
         </div>
       </>
