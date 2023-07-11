@@ -40,6 +40,25 @@
     bottom: 300%;
   }
 }
+@keyframes deletebutton {
+  0% {
+    background-color: rgb(255, 29, 29);
+  }
+  100% {
+    background-color: rgb(114, 0, 0);
+  }
+}
+@keyframes colorFontButton {
+  0% {
+    color: rgb(0, 255, 170);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  100% {
+    color: rgb(0, 132, 255);
+  }
+}
 span {
   position: absolute;
 }
@@ -148,6 +167,12 @@ ul {
   position: relative;
 }
 
+#containerHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #containerHeader h1 {
   font-size: 2rem;
   margin: 15px 0;
@@ -161,22 +186,39 @@ ul {
   justify-content: center;
   align-items: left;
 }
-#containerAddTodo input, #containerAddTodo button {
+#containerAddTodo form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#containerAddTodo form input, #containerAddTodo form button {
   padding: 10px 15px;
   border-radius: 15px;
   font-size: 1.2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
 }
-#containerAddTodo input {
+#containerAddTodo form input {
   color: rgb(100, 90, 97);
+  width: 30%;
 }
-#containerAddTodo button {
+#containerAddTodo form button {
   background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+  animation-name: bgDynamic;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
   margin-top: 10px;
+  width: 25%;
 }
-#containerAddTodo button:hover {
-  background: rgba(0, 0, 0, 0.788);
-  color: white;
+#containerAddTodo form button:hover {
+  background: rgb(0, 6, 85);
+  animation-name: colorFontButton;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: normal;
 }
 
 #containerTodoList h2 {
@@ -187,25 +229,68 @@ ul {
 #containerTodoList li {
   margin-bottom: 10px;
 }
+#containerTodoList li .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
 #containerTodoList li::after {
   content: "";
   display: block;
   height: 2px;
   background: linear-gradient(to left, rgba(0, 0, 255, 0.349), cyan, rgb(0, 255, 136));
   animation-name: bgDynamic;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: normal;
-  margin: 10px 0;
+  margin: 20px 0;
+}
+#containerTodoList li .inputdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(1, 0, 56);
+  box-shadow: 0 0 5px rgb(2, 0, 105);
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
 }
 #containerTodoList li input {
-  margin-right: 10px;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+#containerTodoList li input:checked {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 5px white, 0 0 5px 5px blue;
+  border-radius: 50%;
 }
 #containerTodoList li label {
-  font-size: 1.2rem;
-  color: rgb(0, 34, 65);
+  font-size: 1.4rem;
+  color: rgb(28, 0, 129);
   font-weight: 500;
+}
+#containerTodoList li button {
+  margin-left: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+#containerTodoList li button:hover {
+  animation-name: deletebutton;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: none;
+  color: white;
+  box-shadow: 0 0 5px red;
+  text-shadow: 0 0 5px red;
 }
 
 /*# sourceMappingURL=index.css.map */

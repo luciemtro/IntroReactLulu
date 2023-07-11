@@ -1,6 +1,8 @@
 import Span from "./Span"
 
-function TodoList({ todos, onDeleteTodo }) {
+
+
+function TodoList({ todos, onDeleteTodo, onCheckboxChange }) {
   return (
     <>
       <div id="containerTodoList">
@@ -9,11 +11,20 @@ function TodoList({ todos, onDeleteTodo }) {
           <h2>Todos :</h2>
           {todos.map((todo, index) => (
             <li key={index}>
-              <input type="checkbox" name="agreement" />
-              <label htmlFor="agreement">{todo}</label>
-              <button onClick={() => onDeleteTodo(index)}>Delete</button>
+              <div className="row">
+                <div className="inputdiv">
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => onCheckboxChange(todo)}
+                />
+                </div>
+                <label>{todo.text}</label>
+                <button onClick={() => onDeleteTodo(todo)}>Delete</button>
+              </div>
             </li>
           ))}
+          
         </ul>
       </div>
     </>

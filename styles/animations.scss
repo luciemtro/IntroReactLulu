@@ -41,3 +41,26 @@
         bottom: 300%
     }
 }
+
+@keyframes deletebutton {
+    0%{
+        background-color: rgb(255, 29, 29);
+    }
+    100%{
+        background-color: rgb(114, 0, 0);
+    }
+}
+
+@keyframes colorFontButton {
+    0%{
+        color: rgb(0, 255, 170);
+    }
+    50%{
+        color: rgb(0, 255, 255);
+    }
+    100%{
+        color: rgb(0, 132, 255);
+    }
+}
+
+

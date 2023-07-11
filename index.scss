@@ -33,8 +33,6 @@ h1, h2, h3, h4, h5, h6, button{
 }
 
 
-
-
 #containerHeader, 
 #containerAddTodo, 
 ul{
@@ -47,6 +45,7 @@ ul{
     position: relative;
 }
 #containerHeader{
+    @include displayFull(flex, column, center, center);
     h1{
         font-size: 2rem;
         margin: 15px 0;
@@ -56,21 +55,27 @@ ul{
 }
 #containerAddTodo{
     @include displayFull(flex, column, center, left);
-    input, button{
-        padding: 10px 15px;
-        border-radius: 15px;
-        font-size: 1.2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
-    }
-    input{
-        color:rgb(100, 90, 97);
-    }
-    button{
-        background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
-        margin-top: 10px;
-        &:hover{
-            background: rgba(0, 0, 0, 0.788);
-            color: white;
+    form{
+        @include displayFull(flex, column, center, center);
+        input, button{
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+        }
+        input{
+            color:rgb(100, 90, 97);
+            width: 30%;
+        }
+        button{
+            background: linear-gradient(to left, blue, cyan, rgb(0, 255, 136));
+            @include animation(bgDynamic, 5s, infinite, alternate, ease);
+            margin-top: 10px;
+            width: 25%;
+            &:hover{
+                background: rgb(0, 6, 85);
+                @include animation (colorFontButton, 0.2s, infinite, alternate, normal);
+            }
         }
     }
 }
@@ -81,22 +86,56 @@ ul{
         text-shadow: 0 0 5px rgb(0, 0, 46);
     }
     li{
+        .row{
+            @include displayFull(flex, row, left, center);
+        }
         margin-bottom: 10px;
         &::after{
             content: "";
             display: block;
             height: 2px;
             background: linear-gradient(to left, rgba(0, 0, 255, 0.349), cyan, rgb(0, 255, 136));
-            @include animation (bgDynamic, 5s, infinite, alternate, normal);
-            margin: 10px 0;
+            @include animation (bgDynamic, 2s, infinite, alternate, normal);
+            margin: 20px 0;
+        }
+        .inputdiv{
+            @include displayFull(flex, row, center, center);
+            width: 30px;
+            height: 30px;
+            background-color: rgb(1, 0, 56);
+            box-shadow: 0 0 5px rgb(2, 0, 105);
+            border-radius: 50%;
+            margin-right: 20px;
+            cursor: pointer;
         }
         input{
-            margin-right: 10px;
+            width: 100%;
+            height: 100%;
+            appearance: none;
+            cursor: pointer;
         }
+        input:checked {
+            background-color: #ffffff;
+            box-shadow: 0 0 5px 5px white,
+            0 0 5px 5px blue;
+            border-radius: 50%;
+          }
         label{
-            font-size: 1.2rem;
-            color: rgb(0, 34, 65);   
+            font-size: 1.4rem;
+            color: rgb(28, 0, 129);
             font-weight: 500;
+        }
+        button{
+            margin-left: 15px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            &:hover{
+                @include animation(deletebutton, 0.3s, infinite, alternate, none);
+                color: white;
+                box-shadow: 0 0 5px red;
+                text-shadow: 0 0 5px red;
+            }
         }
     }
 }

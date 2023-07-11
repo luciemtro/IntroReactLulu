@@ -5,14 +5,28 @@ import TodoList from './Todo';
 import '../index.css'
 
 function App() {
-  const [todos, setTodos] = useState(["My first todo", "My second todo"]);
+  const [todos, setTodos] = useState([]);
 
   const handleAddTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
+    const todo = { text: newTodo, completed: false };
+    setTodos([...todos, todo]);
   };
 
-  const handleDeleteTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
+  const handleDeleteTodo = (todo) => {
+    const updatedTodos = todos.filter((item) => item !== todo);
+    setTodos(updatedTodos);
+  };
+
+  const handleCheckboxChange = (todo) => {
+    const updatedTodos = todos.map((item) => {
+      if (item === todo) {
+        return {
+          ...item,
+          completed: !item.completed
+        };
+      }
+      return item;
+    });
     setTodos(updatedTodos);
   };
 
@@ -20,7 +34,7 @@ function App() {
     <>
       <Title />
       <AddTodo onAddTodo={handleAddTodo} />
-      <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} />
+      <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} onCheckboxChange={handleCheckboxChange} />
     </>
   )
 }

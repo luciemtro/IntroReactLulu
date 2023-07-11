@@ -1,27 +1,33 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import Span from "./Span"
 
 function AddTodo({ onAddTodo }) {
-  const inputRef = useRef();
+  const [newTodo, setNewTodo] = useState("");
 
-  function clickHandler() {
-    const inputElement = inputRef.current;
-    const newTodo = inputElement.value;
+  function handleChange(event) {
+    setNewTodo(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
     onAddTodo(newTodo);
-    inputElement.value = "";
+    setNewTodo("");
   }
 
   return (
     <>
       <div id="containerAddTodo">
         <Span/>
-        <input
-          id="inputNewTodo"
-          type="text"
-          placeholder="Type a new todo"
-          ref={inputRef}
-        />
-        <button id="addTodoBtn" type="submit" onClick={clickHandler}>Add Todo</button>
+        <form onSubmit={handleSubmit}>
+          <input
+            id="inputNewTodo"
+            type="text"
+            placeholder="Type a new todo"
+            value={newTodo}
+            onChange={handleChange}
+          />
+          <button id="addTodoBtn" type="submit">Add Todo</button>
+        </form>
       </div>
     </>
   )
