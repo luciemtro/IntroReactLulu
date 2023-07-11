@@ -43,6 +43,7 @@ ul{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
     overflow: hidden;
     position: relative;
+    border-radius : 15px;
 }
 #containerHeader{
     @include displayFull(flex, column, center, center);
