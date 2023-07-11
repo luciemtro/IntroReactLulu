@@ -5,8 +5,6 @@ import TodoList from './Todo';
 import '../index.css'
 
 function App() {
-const [todo, setTodo] = useState("");
-const [todos, setTodos]= useState([]);
   return (
     <>
       <Title/>
