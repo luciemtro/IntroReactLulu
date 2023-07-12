@@ -3,16 +3,13 @@ import Title from './Title'
 import AddTodo from './AddTodo';
 import TodoList from './Todo';
 import '../index.css'
-
+const LSKEY = "MyTodoApp";
 function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    const storedTodos = localStorage.getItem('todos');
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos));
-    }
-  }, []);
+    window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
+  });
 
   const handleAddTodo = (newTodo) => {
     const todo = { text: newTodo, completed: false };
