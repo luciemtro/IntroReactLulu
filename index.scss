@@ -42,7 +42,7 @@ ul{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
     overflow: hidden;
     position: relative;
-    border-radius : 15px;
+    border-radius: 10px;
 }
 #containerHeader{
     @include displayFull(flex, column, center, center);
@@ -84,10 +84,20 @@ ul{
         margin: 20px 0;   
         color: white;
         text-shadow: 0 0 5px rgb(0, 0, 46);
+        text-align: center;
+        font-size : 2rem;
+        &::after{
+            content: "";
+            display: block;
+            height: 2px;
+            background: linear-gradient(to left, rgba(0, 0, 255, 0.349), cyan, rgb(0, 255, 136));
+            @include animation (bgDynamic, 2s, infinite, alternate, normal);
+            margin-top: 20px;
+        }
     }
     li{
         .row{
-            @include displayFull(flex, row, left, center);
+            @include displayFull(flex, row, space-around, center);
         }
         margin-bottom: 10px;
         &::after{
@@ -122,8 +132,9 @@ ul{
           }
         label{
             font-size: 1.4rem;
-            color: rgb(28, 0, 129);
+            color: rgb(10, 0, 46);
             font-weight: 500;
+            font-weight: 300;
         }
         button{
             margin-left: 15px;

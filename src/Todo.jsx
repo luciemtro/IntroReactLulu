@@ -1,7 +1,5 @@
 import Span from "./Span"
 
-
-
 function TodoList({ todos, onDeleteTodo, onCheckboxChange }) {
   return (
     <>
@@ -24,7 +22,6 @@ function TodoList({ todos, onDeleteTodo, onCheckboxChange }) {
               </div>
             </li>
           ))}
-          
         </ul>
       </div>
     </>

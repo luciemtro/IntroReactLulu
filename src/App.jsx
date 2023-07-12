@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import Title from './Title'
 import AddTodo from './AddTodo';
 import TodoList from './Todo';
@@ -13,8 +13,10 @@ function App() {
   };
 
   const handleDeleteTodo = (todo) => {
-    const updatedTodos = todos.filter((item) => item !== todo);
-    setTodos(updatedTodos);
+    if (todo.completed) {
+      const updatedTodos = todos.filter((item) => item !== todo);
+      setTodos(updatedTodos);
+    }
   };
 
   const handleCheckboxChange = (todo) => {

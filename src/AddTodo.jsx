@@ -3,7 +3,7 @@ import Span from "./Span"
 
 function AddTodo({ onAddTodo }) {
   const [newTodo, setNewTodo] = useState("");
-
+  
   function handleChange(event) {
     setNewTodo(event.target.value);
   }
