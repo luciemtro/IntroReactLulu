@@ -3,16 +3,24 @@ import Title from './Title'
 import AddTodo from './AddTodo';
 import TodoList from './Todo';
 import '../index.css'
-const LSKEY = "MyTodoApp";
-function App() {
-  const [todos, setTodos] = useState([]);
 
+const LSKEY = "MyTodoApp";
+
+
+function App() {
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem(LSKEY)
+    if (localValue == null) return []
+
+    return JSON.parse(localValue)
+  });
+  
   useEffect(() => {
-    window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
+    window.localStorage.setItem(LSKEY, JSON.stringify(todos));
   });
 
   const handleAddTodo = (newTodo) => {
-    const todo = { text: newTodo, completed: false };
+    const todo = { text: newTodo};
     setTodos([...todos, todo]);
   };
 
