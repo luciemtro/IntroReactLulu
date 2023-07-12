@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState, useEffect } from 'react'
 import Title from './Title'
 import AddTodo from './AddTodo';
 import TodoList from './Todo';
@@ -6,6 +6,13 @@ import '../index.css'
 
 function App() {
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
 
   const handleAddTodo = (newTodo) => {
     const todo = { text: newTodo, completed: false };
