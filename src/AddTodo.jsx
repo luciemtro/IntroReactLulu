@@ -6,11 +6,13 @@ function AddTodo({ onAddTodo }) {
   const [newTodo, setNewTodo] = useState("");
   
 
+
   /*
   Sert à upload notre variable d'état à partir de la valeur de notre input (cela peut être un autre élément de formulaire comme une textarea, etc.). 
   Notre parametre event représente l'événement déclenché lorsqu'un changement se produit dans notre input.
   On utilise notre function d'upload en lui donnant la valeur de notre évènement, en gros ce qui sera écrit dans notre input.
   */
+
   function handleChange(event) {
     setNewTodo(event.target.value);
   }
