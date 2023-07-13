@@ -123,6 +123,7 @@ span {
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   list-style: none;
   text-transform: none;
   text-decoration: none;
@@ -131,6 +132,7 @@ span {
 
 body {
   padding: 5%;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,7 +145,7 @@ body {
   background-image: url("src/assets/background2.jpg");
 }
 body #container {
-  width: 60%;
+  width: 80%;
 }
 
 h1, h2, h3, h4, h5, h6, button {
@@ -307,12 +309,12 @@ ul {
   text-shadow: 0 0 5px red;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 850px) {
   body {
-    padding: 2%;
+    padding: 0;
   }
   body #container {
-    width: 100%;
+    width: 97%;
   }
   #containerAddTodo form input, #containerAddTodo form button {
     font-size: 1rem;
@@ -333,15 +335,10 @@ ul {
     margin: 10px 0;
   }
   #containerTodoList li .inputdiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     width: 19px;
     height: 19px;
     background-color: rgb(1, 0, 56);
     box-shadow: 0 0 3px rgb(2, 0, 105);
-    margin-right: 20px;
     cursor: pointer;
   }
   #containerTodoList li input:checked {

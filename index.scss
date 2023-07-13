@@ -7,6 +7,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     list-style: none;
     text-transform: none;
     text-decoration: none;
@@ -15,11 +16,12 @@
 
 body{
     padding: 5%;
+    margin-top: 5px;
     @include displayFull(flex, column, center, center);
     @include animation(bgDynamic, 25s, infinite, alternate, ease);
     background-image: url("src/assets/background2.jpg");
     #container{
-        width: 60%;
+        width: 80%;
     }
 }
 
@@ -149,11 +151,11 @@ ul{
     }
 }
 
-@media only screen and (max-width : 500px){
+@media only screen and (max-width : 850px){
     body{
-        padding: 2%;
+        padding: 0;
         #container{
-            width: 100%;
+            width: 97%;
         }
     }
     #containerAddTodo{
@@ -180,12 +182,10 @@ ul{
                 margin: 10px 0;
             }
             .inputdiv{
-                @include displayFull(flex, row, center, center);
                 width: 19px;
                 height: 19px;
                 background-color: rgb(1, 0, 56);
                 box-shadow: 0 0 3px rgb(2, 0, 105);
-                margin-right: 20px;
                 cursor: pointer;
             }
             input:checked {
