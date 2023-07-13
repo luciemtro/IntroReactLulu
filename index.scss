@@ -97,7 +97,7 @@ ul{
     }
     li{
         .row{
-            @include displayFull(flex, row, space-around, center);
+            @include displayFull(flex, row, space-between, center);
         }
         margin-bottom: 10px;
         &::after{
@@ -115,7 +115,6 @@ ul{
             background-color: rgb(1, 0, 56);
             box-shadow: 0 0 5px rgb(2, 0, 105);
             border-radius: 50%;
-            margin-right: 20px;
             cursor: pointer;
         }
         input{
@@ -137,7 +136,6 @@ ul{
             font-weight: 300;
         }
         button{
-            margin-left: 15px;
             padding: 10px 20px;
             border-radius: 10px;
             font-size: 1.2rem;
@@ -146,6 +144,61 @@ ul{
                 color: white;
                 box-shadow: 0 0 5px red;
                 text-shadow: 0 0 5px red;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 500px){
+    body{
+        padding: 2%;
+        #container{
+            width: 100%;
+        }
+    }
+    #containerAddTodo{
+        form{
+            input, button{
+                font-size: 1rem;
+            }
+            input{
+                width: 90%;
+            }
+            button{
+                width: 65%;
+            }
+        }
+    }
+    #containerTodoList{
+        h2{
+            font-size : 1.4rem;
+
+        }
+        li{
+            margin-bottom: 5px;
+            &::after{
+                margin: 10px 0;
+            }
+            .inputdiv{
+                @include displayFull(flex, row, center, center);
+                width: 19px;
+                height: 19px;
+                background-color: rgb(1, 0, 56);
+                box-shadow: 0 0 3px rgb(2, 0, 105);
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            input:checked {
+                background-color: #ffffff;
+                box-shadow: 0 0 5px 3px white,
+                0 0 5px 3px blue;
+              }
+            label{
+                font-size: 1.2rem;
+            }
+            button{
+                padding: 6px 10px;
+                font-size: 1rem;
             }
         }
     }

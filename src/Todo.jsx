@@ -1,5 +1,11 @@
 import Span from "./Span"
 
+/*
+  On ajoute comme arguments notre variable todos, la function pour delete, la function pour savoir si notre checkbox est coché grâce à des props venant
+  de app.jsx, le componant parent.
+  On passe le delete en onclick à notre button delete
+  On ajoute notre function checkboxchange avec comme argument 
+*/
 function TodoList({ todos, onDeleteTodo, onCheckboxChange }) {
   return (
     <>
