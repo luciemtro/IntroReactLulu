@@ -1,4 +1,6 @@
+
 import { useState, useEffect } from 'react' // Nos hooks
+
 import Title from './Title'
 import AddTodo from './AddTodo';
 import TodoList from './Todo';
@@ -57,11 +59,15 @@ function App() {
   */
   const handleDeleteTodo = (todo) => {
     if (todo.completed) {
+
   //On Créer une constante updatedTodos qui va reprendre notre todos(notre variable d'état) et lui appliquer une function filter :
-      const updatedTodos = todos.filter((item) => item !== todo);
+
   /*filter sert à créer un nouvel array updatedTodos à partir de l'array todos. 
     La fonction de rappel passée à filter vérifie chaque élément (item) de todos et renvoie true si l'élément est différent de la tâche todo 
     que nous voulons supprimer. En d'autres termes, cela crée un nouvel array sans la tâche à supprimer.*/
+
+      const updatedTodos = todos.filter((item) => item !== todo);
+
       setTodos(updatedTodos);
     }
   };
